@@ -1,16 +1,22 @@
-import { motion } from "framer-motion";
+import { Loader2 } from "lucide-react";
 
 export default function Loader() {
   return (
-    <div className="fixed inset-0 bg-black flex flex-col justify-center items-center z-50">
-      <motion.div
-        animate={{ rotate: 360 }}
-        transition={{ repeat: Infinity, duration: 1.5, ease: "linear" }}
-        className="w-16 h-16 border-4 border-cyan-400 border-t-transparent rounded-full"
-      />
-      <h2 className="text-cyan-400 text-2xl mt-6 animate-pulse">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white text-center p-6 space-y-6">
+      
+      {/* Spinner */}
+      <Loader2 className="animate-spin text-cyan-400" size={60} />
+
+      {/* Welcome Text */}
+      <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">
         Get Ready to Explore Harsha's Profile!
-      </h2>
+      </h1>
+
+      {/* Subtext */}
+      <p className="text-md sm:text-lg md:text-xl text-gray-400">
+        Loading your personalized experience...
+      </p>
+
     </div>
   );
 }
