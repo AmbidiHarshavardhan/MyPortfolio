@@ -33,7 +33,6 @@ export default function Portfolio() {
 
   return (
     <div className={`relative min-h-screen flex flex-col z-10 ${darkMode ? "bg-gradient-to-br from-gray-900/80 via-gray-800/70 to-gray-900/80 text-white" : "bg-gradient-to-br from-sky-100/80 via-white/70 to-blue-50/80 text-black"}`}>
-
       <ParticlesBackground darkMode={darkMode} />
 
       <nav className="fixed top-0 w-full flex flex-wrap items-center justify-between px-4 sm:px-8 py-4 backdrop-blur-md bg-black/20 z-50 shadow-md">
@@ -60,7 +59,6 @@ export default function Portfolio() {
             </Link>
           ))}
         </div>
-
         <a href={resumeLink} download className="mt-4 sm:mt-0 flex items-center gap-2 bg-cyan-500 hover:bg-cyan-400 text-white font-semibold py-2 px-4 rounded-full shadow-lg hover:scale-105 transition">
           <ArrowUp size={20} /> Resume
         </a>
@@ -76,24 +74,24 @@ export default function Portfolio() {
       </div>
 
       <div className="p-4 sm:p-8 pt-40 space-y-16 sm:space-y-24">
- 
+
         {/* Hero Section */}
         <motion.section id="hero" className="text-center space-y-6 scroll-mt-32" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
-          <div className="relative mx-auto w-64 h-64">
+          <div className="relative mx-auto w-40 h-40 sm:w-48 sm:h-48 md:w-64 md:h-64">
             {!profileLoaded && <div className="absolute inset-0 flex items-center justify-center"><Loader2 className="animate-spin" size={40} /></div>}
             <motion.img 
               src={profilePic} 
               alt="Profile" 
               onLoad={() => setProfileLoaded(true)}
               onError={(e) => handleImgError(e, "Profile")}
-              className={`w-64 h-64 rounded-full border-4 border-cyan-400 object-cover ${profileLoaded ? "opacity-100" : "opacity-0"}`}
+              className="w-40 h-40 sm:w-48 sm:h-48 md:w-64 md:h-64 rounded-full border-4 border-cyan-400 object-cover"
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ duration: 1 }}
             />
           </div>
-          <h1 className="text-6xl font-extrabold">Harshavardhan Ambidi</h1>
-          <p className="text-2xl">Software Engineer | SAP ABAP Developer | Full-Stack Developer</p>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold">Harshavardhan Ambidi</h1>
+          <p className="text-lg sm:text-xl md:text-2xl">Software Engineer | SAP ABAP Developer | Full-Stack Developer</p>
         </motion.section>
 
         {/* About Section */}
