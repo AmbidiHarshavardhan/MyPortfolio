@@ -33,12 +33,11 @@ export default function Portfolio() {
 
   return (
     <div className={`relative min-h-screen flex flex-col z-10 ${darkMode ? "bg-gradient-to-br from-gray-900/80 via-gray-800/70 to-gray-900/80 text-white" : "bg-gradient-to-br from-sky-100/80 via-white/70 to-blue-50/80 text-black"}`}>
-      
+
       <ParticlesBackground darkMode={darkMode} />
 
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full flex items-center justify-between px-8 py-4 backdrop-blur-md bg-black/20 z-50 shadow-md">
-        <div className="flex gap-10 text-lg font-semibold">
+      <nav className="fixed top-0 w-full flex flex-wrap items-center justify-between px-4 sm:px-8 py-4 backdrop-blur-md bg-black/20 z-50 shadow-md">
+        <div className="flex flex-wrap gap-4 sm:gap-10 text-md sm:text-lg font-semibold">
           {[
             { to: "about", label: "About" },
             { to: "experience", label: "Experience" },
@@ -62,12 +61,11 @@ export default function Portfolio() {
           ))}
         </div>
 
-        <a href={resumeLink} download className="ml-4 flex items-center gap-2 bg-cyan-500 hover:bg-cyan-400 text-white font-semibold py-2 px-4 rounded-full shadow-lg hover:scale-105 transition">
+        <a href={resumeLink} download className="mt-4 sm:mt-0 flex items-center gap-2 bg-cyan-500 hover:bg-cyan-400 text-white font-semibold py-2 px-4 rounded-full shadow-lg hover:scale-105 transition">
           <ArrowUp size={20} /> Resume
         </a>
       </nav>
 
-      {/* Bottom Buttons */}
       <div className="fixed bottom-6 right-6 flex flex-col gap-6 items-center">
         <button onClick={() => setDarkMode(!darkMode)} className="rounded-full p-4 bg-cyan-500 hover:bg-cyan-600">
           {darkMode ? <Sun size={40} /> : <Moon size={40} />}
@@ -77,9 +75,8 @@ export default function Portfolio() {
         </button>
       </div>
 
-      {/* Main Content */}
-      <div className="p-8 pt-40 space-y-24">
-        
+      <div className="p-4 sm:p-8 pt-40 space-y-16 sm:space-y-24">
+ 
         {/* Hero Section */}
         <motion.section id="hero" className="text-center space-y-6 scroll-mt-32" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
           <div className="relative mx-auto w-64 h-64">
